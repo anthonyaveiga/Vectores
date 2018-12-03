@@ -4,43 +4,79 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vectores
+namespace appvectores
 {
-    
-    
-class Program
+    class Program
     {
-        public static void VectorInicializar()
-        {
-            int[] x = new int[8];
-            x[0] = 10;
-            x[1] = 2;
-            x[2] = 20;
-            x[3] = 8;
-            x[4] = 15;
-            x[5] = 1;
-            x[6] = -9;
-            x[7] = 14;
-
-
-            int suma = 0;
-            Console.WriteLine("\nElementos del vector \n=====================\n");
-            for (int i = 0; i < x.Length; i++)
-            {
-                Console.WriteLine("ELEMENTO INDICE {0} ----> {1}", (i + 1), x[i]);
-                suma += x[i];
-            }
-
-            Console.WriteLine("La sumatoria es {0}", suma);
-            Console.WriteLine("El promedio es {0}", (double)suma /x.Length);
-
-
-        }
         static void Main(string[] args)
         {
+            Console.WriteLine("control de versiones kl");
+            Console.WriteLine("control de versiones1");
+            Console.WriteLine("3 elevado a la 4 es igual a {0}", potencia(3, 4));
+            try
+            {
+                Console.WriteLine("-5 elevado a la 2 es igual a {0}", potencia(-5, 2));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error :" + ex.Message.ToString());
+            }
+            Console.WriteLine("2 elevado a la 5 es igual a {0}", potencia(2, 5));
+            vectorinicial();
 
-            VectorInicializar();
             Console.ReadKey();
         }
+        public static double potencia(double x, int y)
+        {
+            double p = 1;
+            if (x <= 0)
+            {
+                throw new Exception("x debe de ser positivo... ");
+            }
+            if (y <= 0)
+            {
+                throw new Exception("y debe de ser positivo");
+            }
+            for (int i = 1; i < y; i++)
+            {
+                p *= y;
+
+            }
+            return p;
+        }
+        public static void vectorinicial()
+        {
+
+            int[] x = new int[8];
+            x[0] = 10;
+            x[1] = 10;
+            x[2] = 10;
+            x[3] = 10;
+            x[4] = 10;
+            x[5] = 10;
+            x[6] = 10;
+            x[7] = 10;
+            Console.WriteLine("\nElEmentos del vector\n=====================");
+            for (int i = 0; i < 8; i++)
+            {
+
+                Console.WriteLine("elemento indice {0} --> {1}", (i + 1), x[i]);
+
+            }
+
+            int s = 0;
+            for (int i = 0; i < x.Length; i++)
+            {
+                s += x[i];
+
+            }
+            Console.WriteLine("la sumatoria es {0}", s);
+            Console.WriteLine("el pro,edio es  {0}", (double)s / x.Length);
+        }
+
+
+
+
+
     }
 }
