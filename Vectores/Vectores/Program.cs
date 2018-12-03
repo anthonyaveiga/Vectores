@@ -10,7 +10,7 @@ namespace appvectores
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("control de versiones kl");
+            Console.WriteLine("control de versiones");
             Console.WriteLine("control de versiones1");
             Console.WriteLine("3 elevado a la 4 es igual a {0}", potencia(3, 4));
             try
