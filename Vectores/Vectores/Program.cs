@@ -21,11 +21,20 @@ class Program
             x[5] = 1;
             x[6] = -9;
             x[7] = 14;
-            //Imprimir el vector
-            for (int i = 0; i < 8; i++)
+
+
+            int suma = 0;
+            Console.WriteLine("\nElementos del vector \n=====================\n");
+            for (int i = 0; i < x.Length; i++)
             {
                 Console.WriteLine("ELEMENTO INDICE {0} ----> {1}", (i + 1), x[i]);
+                suma += x[i];
             }
+
+            Console.WriteLine("La sumatoria es {0}", suma);
+            Console.WriteLine("El promedio es {0}", (double)suma /x.Length);
+
+
         }
         static void Main(string[] args)
         {
